@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sold
+{% endblock %}
+
+{% block main %}
+    <h1>You have sold <b>{{ numberOfShares }} {{ name }} [{{ symbol }}]</b> share at the price of <b>{{ price }}</b>. <br>
+        In total you received <b>{{ totalPrice | usd }}</b></h1>
+    <h2>Your new Balance: <b>{{ newBalance }}</b>.</h2>
+
+    <p><br>
+    <br>
+    </p>
+
+    <a class="btn btn-primary" href="/sell">sell more</a>
+
+{% endblock %}

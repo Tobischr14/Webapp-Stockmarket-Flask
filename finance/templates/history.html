@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<h1 class="text-start">History of Transactions:<br>
+    <br></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Transaction ID</th>
+            <th>Name of Stock</th>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    <!-- TODO: Loop through the given variable-lists to display them in this table -->
+        {% for element in userTransactions %}
+            <tr>
+                <td>{{ element["type"] }}</td>
+                <td>{{ element["transaction_id"] }}</td>
+                <td>{{ element["name"] }}</td>
+                <td>{{ element["symbol"] }}</td>
+                <td>{{ element["shares"] }}</td>
+                <td>{{ element["price"] }}</td>
+                <td>{{ element["date"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

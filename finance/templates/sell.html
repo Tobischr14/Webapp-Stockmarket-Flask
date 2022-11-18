@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <h1>Sell</h1>
+            <h2>Which stock do you want to sell?</h2>
+        </div>
+        <div class="form-group">
+            <p>Stocks:</p>
+
+            <select class="mb-3" id="symbol" name="symbol">
+                <!-- TODO: Loop through portfolio to show existing stocks -->
+                {% for element in userPortfolio %}
+                    <option>{{ element["symbol"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <p><br></p>
+            <p>Amount:</p>
+            <input class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of Stock" type="number" >
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    buyConfirmation
+{% endblock %}
+
+{% block main %}
+    <h1>You have bought <b>{{ numberOfShares }} {{ name }} [{{ symbol }}]</b> share at the price of <b>{{ price | usd }}</b>. <br>
+    In Total it cost you <b>{{ totalPrice | usd }}</b></h1>
+    <h2>Your new Balance: <b>{{ newBalance | usd }}</b>.</h2>
+
+    <p><br>
+    <br>
+    </p>
+
+    <a class="btn btn-primary" href="/buy">buy more</a>
+
+{% endblock %}

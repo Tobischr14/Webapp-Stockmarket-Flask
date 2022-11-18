@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <h1>{{ name }} [{{ symbol }}]</h1>
+    <h2>Price: {{ price | usd }} $</h2>
+
+    <p><br>
+    <br>
+    </p>
+
+    <a class="btn btn-primary" href="/quote">New quote</a>
+
+{% endblock %}

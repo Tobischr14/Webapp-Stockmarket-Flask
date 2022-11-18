@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<h1 class="text-start">Total Value<br>
+    <br></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Total Value:</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <td>{{ userTotal | usd }}</td>
+                </tr>
+        </tbody>
+    </table>
+
+<h1 class="text-start">This is your Cash:<br>
+    <br></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cash</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                <tr>
+                    <td>{{ userCash | usd}}</td>
+                </tr>
+        </tbody>
+    </table>
+
+<h1 class="text-start"><br>This is your Portfolio:<br>
+<br></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Number of Shares</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <!-- TODO: Loop through the given variable-lists to display them in this table -->
+            {% for element in userPortfolio %}
+                <tr>
+                    <td>{{ element["symbol"] }}</td>
+                    <td>{{ element["shares"] }}</td>
+                    <td>{{ element["price"] | usd }}</td>
+                    <td>{{ element["total"] | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
